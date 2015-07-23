@@ -1,0 +1,16 @@
+<ion-view title="Gastos Total">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="expense in expenses|filter:by.roomiesEmail" type="item-text-wrap">
+        {{expense.label}}
+        <span class="badge badge-energized">{{expense.cost}}</span>
+      </ion-item>
+    </ion-list>
+    <div class="card assertive">
+      <div class="item item-text-wrap">
+        Total Consumido <span class="badge badge-positive">{{getTotal()}}</span>
+      </div>
+    </div>
+  </ion-content>
+  
+</ion-view>

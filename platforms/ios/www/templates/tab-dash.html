@@ -1,0 +1,21 @@
+<ion-view title="Control de Gastos">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="expense in expenses|filter:user.password.email" type="item-text-wrap">
+        {{expense.label}}
+        <span class="badge badge-balanced">{{expense.cost}}</span>
+      </ion-item>
+    </ion-list>
+      <div class="card assertive">
+          <div class="item item-text-wrap">
+              total consumido<span class="badge badge-positive">{{getTotal()}}</span>
+          </div>
+      </div>
+  </ion-content>
+  <ion-footer-bar>
+      <input ng-model='label' type='text' id='labelInput'  placeholder='Nuevos Gastos...'>
+      <input ng-model='cost' type="number" id="costInput" placeholder='$'>
+      <button class="button button-large button-positive"  ng-click="addExpense($event)"><i class="ion-plus-round"></i>
+</button>
+  </ion-footer-bar>
+</ion-view>
